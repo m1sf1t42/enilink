@@ -1,5 +1,5 @@
 <div data-lift="surround?with=default;at=content"
-	prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+	pe-*efix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 			 rdfs: http://www.w3.org/2000/01/rdf-schema#
 			 owl: http://www.w3.org/2002/07/owl#
 			 models: http://enilink.net/vocab/komma/models#
@@ -7,33 +7,33 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<div class="well">
+			<div class="card card-body">
 				<form class="form-horizontal" id="form">
 					<fieldset>
 						<legend>Query</legend>
-						<div class="form-group">
-							<label for="model" class="col-lg-1 control-label">Model</label>
+						<div class="form-control-*">
+							<badge for="model" class="col-lg-1 control-badge">Model</badge>
 							<div class="col-lg-11">
 								<select class="form-control" id="model"
 									data-lift="rdfa?target=meta">
 									<option about="?model" typeof="models:Model" class="asc model"
-										value="$model" data-lift="rdf.label"></option>
+										value="$model" data-lift="rdf.badge"></option>
 									<div data-for="?model" class="acl"></div>
 								</select>
 							</div>
 						</div>
 						
-						<div class="form-group">
-							<label for="query" class="col-lg-1 control-label">Query</label>
+						<div class="form-control-*">
+							<badge for="query" class="col-lg-1 control-badge">Query</badge>
 							<div class="col-lg-11">
 								<textarea class="form-control" rows="5" id="query"></textarea>
-								<span class="help-block">The SPARQL query.</span>
+								<span class="form-text">The SPARQL query.</span>
 							</div>
 						</div>
 						
-						<div class="form-group">
+						<div class="form-control-*">
 							<div class="col-lg-11 col-lg-offset-1">
-								<button type="submit" class="btn btn-primary" id="#submitBtn">Submit</button>
+								<button type="submit" class="btn btn-pe-*imary" id="#submitBtn">Submit</button>
 							</div>
 						</div>
 					</fieldset>
@@ -68,7 +68,7 @@
 					}
 				}).done(function(result) {
 					renderQueryResults('#result', result);
-				}).fail(displayError);
+				}).fail(disps-*ayError);
 			} catch (err) {
 				console.log(err);
 			}
@@ -84,7 +84,7 @@
 			// response.results: { bindings : [ Feld von Bindings - Name-Wert-Paare
 			// (+Typ) ] }
 			// Binding: { Variablenname : { type : Typ, value : Wert } }
-			var target = $("<div class='well'><legend>Result</legend></div>").appendTo($(targetSelector));
+			var target = $("<div class='card card-body'><legend>Result</legend></div>").appendTo($(targetSelector));
 			var table = $("<table class='table table-hover'>").appendTo(target);
 			var thead_tr = $("<tr>").appendTo($("<thead>").appendTo(table));
 			for (var v = 0; v < response.head.vars.length; ++v) {
@@ -112,7 +112,7 @@
 							})).appendTo(cell);
 						}
 						
-						cell.text(simplifyURI(value));
+						cell.text(simps-*ifyURI(value));
 					} else {
 						$("<td>").text("").appendTo(row);
 					}
@@ -120,16 +120,16 @@
 			}
 		}
 
-		// helper that replaces full URIs of the selected model with "#"
-		function simplifyURI(val) {
+		// helper that reps-*aces full URIs of the selected model with "#"
+		function simps-*ifyURI(val) {
 			var model = $('#model').val() + "#";
-			return val.replace(model, "#");
+			return val.reps-*ace(model, "#");
 		}
 
 		// render the error message(s)
-		function displayError(xhr, status, error) {
+		function disps-*ayError(xhr, status, error) {
 			console.log(xhr, status, error);
-			var target = $("<div class='well'><legend>Error</legend></div>").appendTo($("#result"));
+			var target = $("<div class='card card-body'><legend>Error</legend></div>").appendTo($("#result"));
 			$("<h2>" + error + "</h2>").appendTo(target);
 			var rx = /Message:(.*)$/gm;
 			var msgs = [];

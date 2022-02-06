@@ -12,7 +12,7 @@
 	<div id="main" data-lift="surround?with=default;at=content">
 		<style data-lift="head">
 ul {
-	padding-left: 2em;
+	padding-start: 2em;
 }
 </style>
 		<div data-lift="rdfa?inferred=false">
@@ -24,7 +24,7 @@ ul {
 							&lt;<span class="lift:rdf.ref"></span>&gt;
 						</div>
 						<div class="col-md-2">
-							<span style="font-weight: bold">Download</span> <a
+							<span style="fw: bold">Download</span> <a
 								href="?model={}&type=application%2Frdf%2Bxml"
 								data-lift="rdf.ref?to=href" type="application/rdf+xml">RDF/XML</a>
 							<a href="?model={}&type=text%2Fturtle"
@@ -37,7 +37,7 @@ ul {
 					</div>
 
 					<div class="row" data-if="?imported">
-						<div class="col-md-3" style="font-weight: bold">imports</div>
+						<div class="col-md-3" style="fw: bold">imports</div>
 						<div class="col-md-9">
 							<div class="row asc" rel="owl:imports" resource="?imported">
 								<div class="col-md-12">

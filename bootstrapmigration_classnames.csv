@@ -3,8 +3,8 @@ panel-heading,card-header
 panel-title,card-title
 panel-body,card-body
 panel-footer,card-footer
-panel-**,card bg-**
-progress-bar-**,progress-bar bg-**
+panel-,card bg-
+progress-bar-,progress-bar bg-
 well,card card-body
 thumbnail,card card-body
 progress-bar active,progress-bar-animated
@@ -16,33 +16,33 @@ img-responsive,img-fluid
 img-rounded,rounded
 img-circle,circle
 table-condensed,table-sm
-table **,table-**
+table,table-
 control-label ,col-form-label
-form-group-*,form-control-*
+form-group-,form-control-
 help-block,form-text
 form-control-static,form-control-plaintext
 btn-default,btn-secondary
 btn-xs,btn-sm
 label,badge
-badge-**,badge bg-**
-carousel item **,carousel-item-**
+badge-,badge bg-
+carousel item,carousel-item-
 carousel-control-right,carousel-control-next
 carousel-control-left,carousel-control-prev
 badge-pill,rounded-pill
-left-*,start-*
-right-*,end-*
+left-,start-
+right-,end-
 float-left,float-start
 float-right,float-end
 border-left,border-start
 border-right,border-end
 rounded-left,rounded-start
 rounded-right,rounded-end
-ml-*,ms-*
-mr-*,me-*
-pl-*,ps-*
-pr-*,pe-*
+ml-,ms-
+mr-,me-
+pl-,ps-
+pr-,pe-
 text-left,text-start
 text-right,text-end
 text-monospace,font-monospace
-font-weight-*,fw-*
-font-style-*,fst-*
+font-weight-,fw-
+font-style-,fst-
