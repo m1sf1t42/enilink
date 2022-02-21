@@ -223,14 +223,14 @@ class Rdfa extends Sparql with SparqlExtractor {
           val Nr = "([0-9]+)".r
           override def pageXml(newFirst: Long, ns: NodeSeq): NodeSeq = {
             if (first == newFirst || newFirst < 0 || newFirst >= count)
-              <li class={
+              <li class="page-link" id={
                 ns match {
                   case Text(Nr(_)) => "active"
                   case _ => "disabled"
                 }
               }><a href="javascript:void(0)">{ ns }</a></li>
             else
-              <li>{
+              <li class="page-link">{
                 RdfaRefreshFunc.value match {
                   case Full(name) => <a href="javascript://" onclick={
                     callAjaxRefresh(name, paramsForOffset(offsetParam, newFirst)).toJsCmd
