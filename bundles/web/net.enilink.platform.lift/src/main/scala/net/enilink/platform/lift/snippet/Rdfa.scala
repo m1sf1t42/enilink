@@ -237,22 +237,27 @@ class Rdfa extends Sparql with SparqlExtractor {
                   }>{ ns }</a>
                   case _ => <a href={ pageUrl(newFirst) }>{ ns }</a>
                 }
-              }</li>
+              } </li>
           }
 
           // replaces the annotated elements instead of using them as a container
           override def paginate: CssSel = {
             import scala.math._
 
-            ".first" #> pageXml(0, firstXml) &
-              ".prev" #> pageXml(max(first - itemsPerPage, 0), prevXml) &
+            var firstIcon : NodeSeq = {<img src="bootstrap-icons-1.8.1/chevron-double-left.svg"></img>}
+            var prevIcon : NodeSeq = {<img src="bootstrap-icons-1.8.1/chevron-left.svg"></img>}
+            var nextIcon : NodeSeq = {<img src="bootstrap-icons-1.8.1/chevron-right.svg"></img>}
+            var lastIcon : NodeSeq = {<img src="bootstrap-icons-1.8.1/chevron-double-right.svg"></img>}
+
+            ".first" #> pageXml(0, firstIcon) &
+              ".prev" #> pageXml(max(first - itemsPerPage, 0), prevIcon) &
               ".all-pages" #> pagesXml(0 until numPages) _ &
               ".zoomed-pages" #> pagesXml(zoomedPages) _ &
               ".next" #> pageXml(
                 max(0, min(first + itemsPerPage, itemsPerPage * (numPages - 1))),
-                nextXml
+                nextIcon
               ) &
-              ".last" #> pageXml(itemsPerPage * (numPages - 1), lastXml) &
+              ".last" #> pageXml(itemsPerPage * (numPages - 1), lastIcon) &
               ".records" #> currentXml &
               ".records-start" #> recordsFrom &
               ".records-end" #> recordsTo &

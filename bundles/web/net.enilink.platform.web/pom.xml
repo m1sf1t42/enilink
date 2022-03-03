@@ -53,6 +53,17 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>embed-webjars</id>
+						<phase>compile</phase>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -65,6 +76,11 @@
 			<groupId>org.eclipse.platform</groupId>
 			<artifactId>org.eclipse.equinox.security</artifactId>
 			<version>1.3.400</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>bootstrap-icons</artifactId>
+			<version>1.8.1</version>
 		</dependency>
 	</dependencies>
 
